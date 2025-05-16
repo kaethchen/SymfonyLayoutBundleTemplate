@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use 'breakpoints';
+
+@mixin mediaQuery($key, $type: 'max-width') {
+    $size: map.get(breakpoints.$breakpoints, $key);
+
+    @if $type == 'min-width' {
+        @media (min-width: $size) {
+            @content;
+        }
+    } @else if $type == 'max-width' {
+        @media (max-width: $size) {
+            @content;
+        }
+    } @else {
+        @warn "Invalid value for $type. Use 'min-width' or 'max-width'.";
+    }
+}

@@ -1,0 +1,8 @@
+templatelayout:
+    head:
+        og_embed_logo: 'Embed: Logo'
+    footer:
+        copyright: '© Alexandra Göttlicher %date%' # Ignore this.
+        terms: 'Conditions d’utilisation'
+        privacy: 'Confidentialité'
+        contact: 'Contact'

@@ -1,0 +1,7 @@
+@use '../abstracts/functions';
+
+$breakpoints: (
+    wqhd: functions.em(1921),
+    tablet: functions.em(1000),
+    mobile: functions.em(800)
+);

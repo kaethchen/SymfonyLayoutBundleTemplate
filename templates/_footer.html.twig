@@ -1,0 +1,25 @@
+<footer>
+    <ul>
+        <li>
+            {{ 'templatelayout.footer.copyright'|trans({'%date%': 'now'|date('Y')}) }}
+        </li>
+        <li>
+            <a href="">
+                {{ 'templatelayout.footer.terms'|trans }}
+            </a>
+        </li>
+        <li>
+            <a href="">
+                {{ 'templatelayout.footer.privacy'|trans }}
+            </a>
+        </li>
+        <li>
+            <a href="">
+                {{ 'templatelayout.footer.contact'|trans }}
+            </a>
+        </li>
+        <li>
+            {% include '@TemplateLayout/_locale_switcher.html.twig' %}
+        </li>
+    </ul>
+</footer>

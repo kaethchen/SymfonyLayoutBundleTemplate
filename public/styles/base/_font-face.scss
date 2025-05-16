@@ -1,0 +1,9 @@
+@use '../abstracts/functions';
+
+$fallback-fonts: -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+:root {
+    --font-size-title: functions.rem(48);
+    --font-size-callout: functions.rem(16);
+    --font-size-caption: functions.rem(12);
+}

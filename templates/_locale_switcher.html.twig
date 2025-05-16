@@ -1,0 +1,13 @@
+{% set query = app.request.query.all %}
+<select onchange="window.location.href=this.value;">
+    {% for locale in locales %}
+        {% set routeParams = app.request.get('_route_params')|merge({'_locale': locale}) %}
+        {% set url = path(app.request.get('_route'), routeParams) %}
+        {% if query %}
+            {% set url = url ~ '?' ~ query|url_encode %}
+        {% endif %}
+        <option value="{{ url }}" {% if locale == app.request.locale %}selected{% endif %}>
+            {{ locale|language_name }}
+        </option>
+    {% endfor %}
+</select>

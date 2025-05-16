@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block titlePrefix %}{% endblock %} | {% block titleSuffix %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="{{ 'templatelayout.meta.project_slogan'|trans }}" />
+        {% block robots %}
+        {% endblock %}
+        <link rel="icon" sizes="16x16" href="{{ asset('bundles/templatelayout/images/logo/favicon-16x16.ico') }}" type="image/x-icon" />
+        <link rel="icon" sizes="32x32" href="{{ asset('bundles/templatelayout/images/logo/favicon-32x32.ico') }}" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="{{ asset('bundles/templatelayout/images/logo/touch-icon-iphone.png') }}" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('bundles/templatelayout/images/logo/touch-icon-ipad.png') }}" type="image/png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('bundles/templatelayout/images/logo/touch-icon-iphone-retina.png') }}" type="image/png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="{{ asset('bundles/templatelayout/images/logo/touch-icon-ipad-retina.png') }}" type="image/png" />
+        {% block og %}
+            <meta property="og:type" content="website" />
+            <meta property="og:site_name" content="{{ app.request.httpHost }}" />
+            <meta property="og:image" content="{{ asset('bundles/templatelayout/images/logo/logo.webp') }}" />
+            <meta property="og:image:alt" content="{{ 'templatelayout.alt.og_embed_logo'|trans }}" />
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:image" content="{{ asset('bundles/templatelayout/images/logo/logo.webp') }}" />
+            <meta name="twitter:image:alt" content="{{ 'templatelayout.alt.og_embed_logo'|trans }}" />
+            <!-- <meta property="og:description" content="{{ ''|trans }}" />
+            <meta name="twitter:description" content="{{ ''|trans }}" /> -->
+        {% endblock %}
+        {% block styles %}
+            <link rel="preload" href="{{ preload(asset('bundles/templatelayout/styles/templatelayout.scss'), {as: 'style'}) }}" />
+            <link rel="preload" href="{{ preload(asset('bundles/templatelayout/styles/fontawesome/fontawesome.min.css'), {as: 'style'}) }}" />
+            <link rel="preload" href="{{ preload(asset('bundles/templatelayout/styles/fontawesome/solid.min.css'), {as: 'style'}) }}" />
+            <link rel="preload" href="{{ preload(asset('bundles/templatelayout/styles/fontawesome/regular.min.css'), {as: 'style'}) }}" />
+            <link rel="preload" href="{{ preload(asset('bundles/templatelayout/styles/fontawesome/brands.min.css'), {as: 'style'}) }}" />
+            <link rel="stylesheet" href="{{ asset('bundles/templatelayout/styles/templatelayout.scss') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('bundles/templatelayout/styles/fontawesome/fontawesome.min.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('bundles/templatelayout/styles/fontawesome/solid.min.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('bundles/templatelayout/styles/fontawesome/regular.min.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('bundles/templatelayout/styles/fontawesome/brands.min.css') }}" type="text/css" />
+        {% endblock %}
+        {% block locales %}
+            <!-- <link rel="canonical" href="{{ absolute_url(path('', {'_locale': null})) }}" />
+            <link rel="alternate" hreflang="en" href="{{ absolute_url(path('', {'_locale': 'en'})) }}" />
+            <link rel="alternate" hreflang="x-default" href="{{ absolute_url(path('', {'_locale': null})) }}" /> -->
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block header %}
+        {% endblock %}
+
+        {% block main %}
+        {% endblock %}
+
+        {% block footer %}
+            {% include '@TemplateLayout/_footer.html.twig' %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}
+                {{ importmap('app') }}
+            {% endblock %}
+        {% endblock %}
+    </body>
+</html>
